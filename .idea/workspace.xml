@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd442eb4-b89f-4f07-8fa8-967026be6fa3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/airport-data-structures-I.iml" beforeDir="false" afterPath="$PROJECT_DIR$/airport-data-structures-I.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ListaDuplaDesordenada/ListaDuplaDesordenada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaDuplaDesordenada/ListaDuplaDesordenada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,5 +114,9 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1591193861899" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1591194649612">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1591194649612" />
   </component>
 </project>

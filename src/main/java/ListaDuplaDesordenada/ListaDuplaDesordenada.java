@@ -142,6 +142,39 @@ public class ListaDuplaDesordenada<X>
         this.primeiro.setAnte(null);
     }
 
+    public void remova(X x) throws Exception
+    {
+        if(x == null)
+            throw new Exception("Elemento para a remoção nulo!");
+
+        if(this.primeiro == null)
+            throw new Exception("Lista vazia!");
+
+        if(this.primeiro.getInfo().equals(x))
+        {
+            if(this.primeiro == this.ultimo)
+            {
+                this.primeiro = null;
+                this.ultimo = null;
+                return;
+            }
+            this.primeiro = this.primeiro.getProx();
+            this.primeiro.setAnte(null);
+        }
+
+        No atual = this.primeiro;
+        while(atual.getProx() != null)
+        {
+            if(atual.getProx().getInfo().equals(x))
+            {
+                atual.setProx(atual.getProx().getProx());
+                atual.getProx().setAnte(atual);
+                break;
+            }
+            atual = atual.getProx();
+        }
+    }
+
     public boolean existe(X x)
     {
         if(this.primeiro == null)
