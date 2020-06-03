@@ -1,6 +1,8 @@
-package main;
+package Main;
 
-import ListaDuplaDesordenada.ListaDuplaDesordenada;
+import Janelas.InitialWindow;
+
+import javax.swing.*;
 
 public class Main
 {
@@ -8,6 +10,7 @@ public class Main
     {
         try
         {
+            InitialWindow init = new InitialWindow();
 
         }
         catch (Exception ex)
