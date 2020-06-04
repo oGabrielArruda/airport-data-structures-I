@@ -204,4 +204,93 @@ public class ListaDuplaDesordenada<X>
         ret += "]";
         return ret;
     }
+
+    public int hashCode ()
+    {
+        final int PRIMO = 13;
+
+        int ret=666;
+
+        for (No atual=this.primeiro;
+             atual!=null;
+             atual=atual.getProx())
+            ret = 17*ret + atual.getInfo().hashCode();
+
+        if (ret<0) ret = -ret;
+
+        return ret;
+    }
+
+    public boolean equals (Object obj)
+    {
+        if (this==obj)
+            return true;
+
+        if (obj==null)
+            return false;
+
+        if (this.getClass()!=obj.getClass())
+            return false;
+
+        ListaDuplaDesordenada<X> lista =
+                (ListaDuplaDesordenada<X>)obj;
+
+        No atualThis =this .primeiro;
+        No atualLista=lista.primeiro;
+
+        while (atualThis!=null && atualLista!=null)
+        {
+            if (!atualThis.getInfo().equals(atualLista.getInfo()))
+                return false;
+
+            atualThis  = atualThis .getProx();
+            atualLista = atualLista.getProx();
+        }
+
+        if (atualThis!=null)
+            return false;
+
+        if (atualLista!=null)
+            return false;
+
+        return true;
+    }
+
+    public ListaDuplaDesordenada (ListaDuplaDesordenada<X> modelo) throws Exception
+    {
+        if (modelo==null)
+            throw new Exception ("Modelo ausente");
+
+        if (modelo.primeiro==null)
+            return;
+
+        this.primeiro = new No (modelo.primeiro.getInfo());
+
+        No atualDoThis   = this  .primeiro;
+        No atualDoModelo = modelo.primeiro.getProx();
+
+        while (atualDoModelo!=null)
+        {
+            atualDoThis.setProx (new No (atualDoThis,atualDoModelo.getInfo(),null));
+            atualDoThis   = atualDoThis  .getProx ();
+            atualDoModelo = atualDoModelo.getProx ();
+        }
+
+        this.ultimo = atualDoThis;
+    }
+
+    public Object clone ()
+    {
+        ListaDuplaDesordenada<X> ret=null;
+
+        try
+        {
+            ret = new ListaDuplaDesordenada (this);
+        }
+        catch (Exception erro)
+        {}
+
+        return ret;
+    }
+
 }

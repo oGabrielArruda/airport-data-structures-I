@@ -26,6 +26,15 @@ public class Voo
         this.nmrVoo = nmrVoo;
     }
 
+    public void getIndiceDestino()
+    {
+        return indiceDestino;
+    }
+
+    public void getNmrVoo()
+    {
+        return NmrVoo;
+    }
 
     // métodos obrigatorios
 }
