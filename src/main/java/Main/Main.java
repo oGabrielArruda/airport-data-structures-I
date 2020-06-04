@@ -12,7 +12,7 @@ public class Main
         try
         {
             AirportManager manager = new AirportManager();
-            InitialWindow init = new InitialWindow();
+            InitialWindow init = new InitialWindow(manager);
         }
         catch (Exception ex)
         {

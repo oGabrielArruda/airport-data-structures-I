@@ -7,7 +7,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AdicionarAeroporto extends InitialWindow {
+public class AdicionarAeroporto {
+    AirportManager manager;
     private JTextField txtCodigo;
     private JTextField txtCidade;
     private JButton btnAdd;
@@ -15,7 +16,9 @@ public class AdicionarAeroporto extends InitialWindow {
     public JPanel PainelAdd;
 
 
-    public AdicionarAeroporto() {
+    public AdicionarAeroporto(AirportManager manager) {
+        this.manager = manager;
+
         btnAdd.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -36,6 +39,6 @@ public class AdicionarAeroporto extends InitialWindow {
 
     private void adicionarAeroporto(Aeroporto aero) throws Exception
     {
-        super.addAeroporto(aero);
+        manager.addAeroporto(aero);
     }
 }

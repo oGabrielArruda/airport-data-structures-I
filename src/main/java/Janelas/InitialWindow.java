@@ -3,12 +3,16 @@ package Janelas;
 import Aeroporto.Aeroporto;
 import AirportManager.AirportManager;
 import ListaDuplaDesordenada.ListaDuplaDesordenada;
+import Voo.Voo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class InitialWindow extends AirportManager {
+    AirportManager manager;
+
     private JFrame frame;
     private JButton btnAddAeroporto;
     private JPanel panelAddAirport;
@@ -17,7 +21,8 @@ public class InitialWindow extends AirportManager {
     private JButton listaVooDeDeterminadoButton;
     private JButton listarTodosOsVoosButton;
 
-    public InitialWindow() {
+    public InitialWindow(AirportManager manager) {
+       this.manager = manager;
        initialize();
     }
 
@@ -33,17 +38,23 @@ public class InitialWindow extends AirportManager {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JFrame addAirport = new JFrame("AddAirport");
-                addAirport.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-                addAirport.setContentPane(new AdicionarAeroporto().PainelAdd);
+                addAirport.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                addAirport.setContentPane(new AdicionarAeroporto(manager).PainelAdd);
                 addAirport.pack();
                 addAirport.setVisible(true);
             }
         });
-    }
 
-    protected void addAeroporto(Aeroporto air) throws Exception
-    {
-        super.addAeroporto(air);
+        cadastrarVooButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame addAirport = new JFrame("CadastrarVoo");
+                addAirport.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                addAirport.setContentPane(new CadastrarVoo(manager).PanelAdd);
+                addAirport.pack();
+                addAirport.setVisible(true);
+            }
+        });
     }
 
 }

@@ -1,13 +1,14 @@
 package Aeroporto;
 
 import ListaDuplaDesordenadaSemRepeticao.ListaDuplaDesordenadaSemRepeticao;
+import ListaVoosSemRepeticao.ListaVoosSemRepeticao;
 import Voo.Voo;
 
 public class Aeroporto
 {
     private String codigo;
     private String cidade;
-    private ListaDuplaDesordenadaSemRepeticao<Voo> possiveisVoos;
+    private ListaVoosSemRepeticao possiveisVoos;
 
     public Aeroporto(String codigo, String cidade) throws Exception
     {
@@ -16,7 +17,7 @@ public class Aeroporto
 
         this.setCodigo(codigo);
         this.setCidade(cidade);
-        possiveisVoos = new ListaDuplaDesordenadaSemRepeticao<Voo>();
+        possiveisVoos = new ListaVoosSemRepeticao();
     }
 
     public void setCidade(String cidade) throws Exception

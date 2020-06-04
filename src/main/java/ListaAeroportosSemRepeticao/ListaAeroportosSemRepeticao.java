@@ -3,6 +3,7 @@ package ListaAeroportosSemRepeticao;
 import Aeroporto.Aeroporto;
 import ListaDuplaDesordenada.ListaDuplaDesordenada;
 import ListaDuplaDesordenadaSemRepeticao.ListaDuplaDesordenadaSemRepeticao;
+import Voo.Voo;
 
 public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenada<Aeroporto>
 {
@@ -30,7 +31,7 @@ public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenada<Aeroporto
 
     @Override
     public void insiraNoFim(Aeroporto aeroporto) throws Exception {
-        if(this.existe(aeroporto))
+        if(this.existe(aeroporto.getCodigo()))
             throw new Exception("Aeroporto já existe");
 
         super.insiraNoFim(aeroporto);
@@ -38,12 +39,27 @@ public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenada<Aeroporto
 
     @Override
     public void insiraNoInicio(Aeroporto aeroporto) throws Exception {
-        if(this.existe(aeroporto))
+        if(this.existe(aeroporto.getCodigo()))
             throw new Exception("Aeroporto já existe");
         super.insiraNoInicio(aeroporto);
     }
 
-    public boolean existe(Aeroporto aeroporto)
+    public void insiraVoo(String codigoOrigem, Voo voo) throws Exception
+    {
+        No atual = super.primeiro;
+        while(atual != null)
+        {
+            if(atual.getInfo().getCodigo().equals(codigoOrigem))
+                break;
+            atual = atual.getProx();
+        }
+        if(atual == null)
+            throw new Exception("Aeroporto de origem inexistente");
+
+        atual.getInfo().addVoo(voo);
+    }
+
+    public boolean existe(String codigo)
     {
         if(super.primeiro == null)
             return false;
@@ -52,41 +68,11 @@ public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenada<Aeroporto
 
         while(atual != null)
         {
-            if (atual.getInfo().getCodigo().equals(aeroporto.getCodigo()))
+            if (atual.getInfo().getCodigo().equals(codigo))
                 return true;
             atual = atual.getProx();
         }
         return false;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if(obj == null)
-            return false;
-        if(obj == this)
-            return true;
-        if(obj.getClass() != this.getClass())
-            return false;
-        ListaAeroportosSemRepeticao listaAeroportos = (ListaAeroportosSemRepeticao) obj;
-
-        No atualThis = super.primeiro;
-        No atualLista= super.primeiro;
-
-        while (atualThis!=null && atualLista!=null)
-        {
-            if (!atualThis.getInfo().getCodigo().equals(atualLista.getInfo().getCodigo()))
-                return false;
-
-            atualThis  = atualThis .getProx();
-            atualLista = atualLista.getProx();
-        }
-
-        if (atualThis!=null)
-            return false;
-
-        if (atualLista!=null)
-            return false;
-
-        return true;
-    }
 }

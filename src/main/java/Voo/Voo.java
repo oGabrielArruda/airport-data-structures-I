@@ -2,21 +2,21 @@ package Voo;
 
 public class Voo
 {
-    private int indiceDestino;
+    private String codigoDestino;
     private int nmrVoo;
 
-    public Voo(int indiceDestino, int nmrVoo) throws Exception
+    public Voo(String codigoDestino, int nmrVoo) throws Exception
     {
         if(nmrVoo == 0)
             throw new Exception("Informações para voo faltantes!");
 
-        this.indiceDestino = indiceDestino;
+        this.codigoDestino = codigoDestino;
         this.nmrVoo = nmrVoo;
     }
 
-    public void setIndiceDestino(int indiceDestino) throws Exception
+    public void setIndiceDestino(String codigoDestino) throws Exception
     {
-        this.indiceDestino = indiceDestino;
+        this.codigoDestino = codigoDestino;
     }
 
     public void setNmrVoo(int nmrVoo) throws Exception
@@ -26,14 +26,41 @@ public class Voo
         this.nmrVoo = nmrVoo;
     }
 
-    public int getIndiceDestino()
+    public String getCodigoDestinoDestino()
     {
-        return this.indiceDestino;
+        return new String(this.codigoDestino);
     }
 
     public int getNmrVoo()
     {
         return this.nmrVoo;
+    }
+
+    public String toString()
+    {
+        String ret = "";
+        ret += "Código Destino: " + this.codigoDestino;
+        ret += "\n Número do Voo: " + this.nmrVoo;
+
+        return ret;
+    }
+
+    public boolean equals(Object obj)
+    {
+        if(obj == null)
+            return false;
+        if(obj.getClass() != this.getClass())
+            return false;
+        if(this == obj)
+            return true;
+
+        Voo outroVoo = (Voo) obj;
+
+        if(this.nmrVoo != outroVoo.nmrVoo)
+            return false;
+        if(!this.codigoDestino.equals(outroVoo.codigoDestino))
+            return false;
+        return true;
     }
 
     // métodos obrigatorios

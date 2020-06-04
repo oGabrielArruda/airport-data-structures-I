@@ -254,7 +254,7 @@ public class ListaDuplaDesordenada<X>
             atual = atual.getProx();
         }
 
-        ret += "]";
+        ret += "]\n";
         return ret;
     }
 
