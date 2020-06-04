@@ -54,6 +54,8 @@ public class ListaDuplaDesordenada<X>
 
     protected No primeiro, ultimo;
 
+    public ListaDuplaDesordenada() {}
+
     protected X meuCloneDeX(X x)
     {
         X ret = null;
@@ -228,6 +230,18 @@ public class ListaDuplaDesordenada<X>
     public boolean isvazia ()
     {
         return this.primeiro==null;
+    }
+
+    public int qtd()
+    {
+        No atual = this.primeiro;
+        int qtd = 0;
+        while(atual != null)
+        {
+            qtd++;
+            atual = atual.getProx();
+        }
+        return qtd;
     }
 
     public String toString()

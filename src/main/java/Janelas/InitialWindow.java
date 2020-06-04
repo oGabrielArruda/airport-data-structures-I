@@ -1,15 +1,17 @@
 package Janelas;
 
-import com.sun.glass.ui.Cursor;
+import Aeroporto.Aeroporto;
+import AirportManager.AirportManager;
+import ListaDuplaDesordenada.ListaDuplaDesordenada;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class InitialWindow {
+public class InitialWindow extends AirportManager {
     private JFrame frame;
     private JButton btnAddAeroporto;
-    private JPanel panelMain;
+    private JPanel panelAddAirport;
     private JButton cadastrarVooButton;
     private JButton removerVooButton;
     private JButton listaVooDeDeterminadoButton;
@@ -22,7 +24,7 @@ public class InitialWindow {
 
     private void initialize() {
         frame = new JFrame("App");
-        frame.setContentPane(panelMain);
+        frame.setContentPane(panelAddAirport);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
@@ -30,9 +32,18 @@ public class InitialWindow {
         btnAddAeroporto.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Hello world!");
+                JFrame addAirport = new JFrame("AddAirport");
+                addAirport.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                addAirport.setContentPane(new AdicionarAeroporto().PainelAdd);
+                addAirport.pack();
+                addAirport.setVisible(true);
             }
         });
+    }
+
+    protected void addAeroporto(Aeroporto air) throws Exception
+    {
+        super.addAeroporto(air);
     }
 
 }

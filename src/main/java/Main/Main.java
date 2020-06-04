@@ -1,5 +1,6 @@
 package Main;
 
+import AirportManager.AirportManager;
 import Janelas.InitialWindow;
 
 import javax.swing.*;
@@ -10,8 +11,8 @@ public class Main
     {
         try
         {
+            AirportManager manager = new AirportManager();
             InitialWindow init = new InitialWindow();
-
         }
         catch (Exception ex)
         {
