@@ -191,6 +191,45 @@ public class ListaDuplaDesordenada<X>
         return false;
     }
 
+    public int getQtd ()
+    {
+        No  atual=this.primeiro;
+        int ret  =0;
+
+        while (atual!=null)
+        {
+            ret++;
+            atual = atual.getProx();
+        }
+
+        return ret;
+    }
+
+    public X getDoInicio () throws Exception
+    {
+        if (this.primeiro==null)
+            throw new Exception ("Nada a obter");
+
+        X ret = tryGetClone(this.primeiro.getInfo());
+
+        return ret;
+    }
+
+    public X getDoFim () throws Exception
+    {
+        if (this.primeiro==null)
+            throw new Exception ("Nada a obter");
+
+        X ret = tryGetClone(this.ultimo.getInfo());
+
+        return ret;
+    }
+
+    public boolean isvazia ()
+    {
+        return this.primeiro==null;
+    }
+
     public String toString()
     {
         String ret = "[ ";
