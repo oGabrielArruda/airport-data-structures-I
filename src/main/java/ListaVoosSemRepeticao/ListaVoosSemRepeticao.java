@@ -1,28 +1,16 @@
 package ListaVoosSemRepeticao;
 
 import ListaDuplaDesordenada.ListaDuplaDesordenada;
+import ListaDuplaDesordenadaSemRepeticao.ListaDuplaDesordenadaSemRepeticao;
 import Voo.Voo;
 
-public class ListaVoosSemRepeticao extends ListaDuplaDesordenada<Voo>
+public class ListaVoosSemRepeticao extends ListaDuplaDesordenadaSemRepeticao<Voo>
 {
     public ListaVoosSemRepeticao() {
         super();
     }
 
     @Override
-    public void insiraNoFim(Voo voo) throws Exception {
-        if(this.existe(voo))
-            throw new Exception("Voo já existe!");
-        super.insiraNoFim(voo);
-    }
-
-    @Override
-    public void insiraNoInicio(Voo voo) throws Exception {
-        if(this.existe(voo))
-            throw new Exception("Voo já existe!");
-        super.insiraNoInicio(voo);
-    }
-
     public boolean existe(Voo voo)
     {
         No atual = super.primeiro;

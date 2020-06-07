@@ -5,7 +5,7 @@ import ListaDuplaDesordenada.ListaDuplaDesordenada;
 import ListaDuplaDesordenadaSemRepeticao.ListaDuplaDesordenadaSemRepeticao;
 import Voo.Voo;
 
-public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenada<Aeroporto>
+public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenadaSemRepeticao<Aeroporto>
 {
     public ListaAeroportosSemRepeticao()
     {
@@ -30,49 +30,40 @@ public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenada<Aeroporto
     }
 
     @Override
-    public void insiraNoFim(Aeroporto aeroporto) throws Exception {
-        if(this.existe(aeroporto.getCodigo()))
-            throw new Exception("Aeroporto já existe");
-
-        super.insiraNoFim(aeroporto);
-    }
-
-    @Override
-    public void insiraNoInicio(Aeroporto aeroporto) throws Exception {
-        if(this.existe(aeroporto.getCodigo()))
-            throw new Exception("Aeroporto já existe");
-        super.insiraNoInicio(aeroporto);
-    }
-
-    public void insiraVoo(String codigoOrigem, Voo voo) throws Exception
-    {
+    public boolean existe(Aeroporto aeroporto) {
         No atual = super.primeiro;
         while(atual != null)
         {
-            if(atual.getInfo().getCodigo().equals(codigoOrigem))
-                break;
-            atual = atual.getProx();
-        }
-        if(atual == null)
-            throw new Exception("Aeroporto de origem inexistente");
-
-        atual.getInfo().addVoo(voo);
-    }
-
-    public boolean existe(String codigo)
-    {
-        if(super.primeiro == null)
-            return false;
-
-        No atual = super.primeiro;
-
-        while(atual != null)
-        {
-            if (atual.getInfo().getCodigo().equals(codigo))
+            if(atual.getInfo().getCodigo().equals(aeroporto.getCodigo()))
                 return true;
             atual = atual.getProx();
         }
         return false;
     }
 
+    public void insiraVoo(String codigoOrigem, Voo voo) throws Exception
+    {
+        if(!this.existe(new Aeroporto(codigoOrigem, "foo")))
+            throw new Exception("Aeroporto de origem inexistente");
+
+        if(!this.existe(new Aeroporto(voo.getCodigoDestinoDestino(), "bar")))
+            throw new Exception("Aeroporto de destino inexistente");
+
+        No aeroportoOrigem = this.buscaAeroporto(codigoOrigem);
+        aeroportoOrigem.getInfo().addVoo(voo);
+    }
+
+    protected No buscaAeroporto(String codigo) throws Exception
+    {
+        No atual = super.primeiro;
+        while(atual != null)
+        {
+            if(atual.getInfo().getCodigo().equals(codigo))
+                break;
+            atual = atual.getProx();
+        }
+        if(atual == null)
+            throw new Exception("Aeroporto de origem inexistente");
+        return atual;
+    }
 }

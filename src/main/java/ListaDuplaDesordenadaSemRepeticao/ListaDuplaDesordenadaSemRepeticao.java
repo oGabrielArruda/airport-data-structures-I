@@ -14,14 +14,14 @@ public class ListaDuplaDesordenadaSemRepeticao<X> extends ListaDuplaDesordenada<
     @Override
     public void insiraNoFim(X x) throws Exception
     {
-        if(super.existe(x))
+        if(this.existe(x))
             throw new Exception("Informação já existente");
         super.insiraNoFim(x);
     }
 
     @Override
     public void insiraNoInicio(X x) throws Exception {
-        if(super.existe(x))
+        if(this.existe(x))
             throw new Exception("Informação já existente");
         super.insiraNoInicio(x);
     }
