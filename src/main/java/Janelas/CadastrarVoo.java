@@ -24,8 +24,13 @@ public class CadastrarVoo {
             public void actionPerformed(ActionEvent e) {
                 try
                 {
-                    Voo voo = new Voo(txtCodigoDestino.getText(), Integer.parseInt(txtNmr.getText()));
-                    cadastrarVoo(txtCodigoOrigem.getText(), voo);
+                    String codigoDest = txtCodigoDestino.getText().toUpperCase();
+                    String codOrigem = txtCodigoOrigem.getText().toUpperCase();
+
+                    Voo voo = new Voo(codigoDest, Integer.parseInt(txtNmr.getText()));
+                    cadastrarVoo(codOrigem, voo);
+
+                    limparCampos();
                 }
                 catch (Exception ex)
                 {
@@ -33,6 +38,13 @@ public class CadastrarVoo {
                 }
             }
         });
+    }
+
+    private void limparCampos()
+    {
+        txtCodigoDestino.setText("");
+        txtCodigoOrigem.setText("");
+        txtNmr.setText("");
     }
 
     private void cadastrarVoo(String cidadeOrigem, Voo voo) throws Exception

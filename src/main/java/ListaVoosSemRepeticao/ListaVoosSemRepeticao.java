@@ -18,6 +18,21 @@ public class ListaVoosSemRepeticao extends ListaDuplaDesordenadaSemRepeticao<Voo
         {
             if(atual.getInfo().getCodigoDestinoDestino().equals(voo.getCodigoDestinoDestino()))
                 return true;
+            if(atual.getInfo().getNmrVoo() == voo.getNmrVoo())
+                return true;
+            atual = atual.getProx();
+        }
+        return false;
+    }
+
+    public boolean existeByNmrVoo(int nmr)
+    {
+        No atual = super.primeiro;
+        while(atual != null)
+        {
+            if(atual.getInfo().getNmrVoo() == nmr)
+                return true;
+            atual = atual.getProx();
         }
         return false;
     }

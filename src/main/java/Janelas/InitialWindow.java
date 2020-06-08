@@ -32,6 +32,7 @@ public class InitialWindow extends AirportManager {
         frame.setContentPane(panelAddAirport);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
+        frame.setSize(600, 400);
         frame.setVisible(true);
 
         btnAddAeroporto.addActionListener(new ActionListener() {
@@ -41,6 +42,7 @@ public class InitialWindow extends AirportManager {
                 addAirport.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
                 addAirport.setContentPane(new AdicionarAeroporto(manager).PainelAdd);
                 addAirport.pack();
+                addAirport.setSize(600, 400);
                 addAirport.setVisible(true);
             }
         });
@@ -48,11 +50,12 @@ public class InitialWindow extends AirportManager {
         cadastrarVooButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame addAirport = new JFrame("CadastrarVoo");
-                addAirport.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-                addAirport.setContentPane(new CadastrarVoo(manager).PanelAdd);
-                addAirport.pack();
-                addAirport.setVisible(true);
+                JFrame addVoo = new JFrame("CadastrarVoo");
+                addVoo.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                addVoo.setContentPane(new CadastrarVoo(manager).PanelAdd);
+                addVoo.pack();
+                addVoo.setSize(600, 400);
+                addVoo.setVisible(true);
             }
         });
     }

@@ -7,21 +7,20 @@ public class Voo
 
     public Voo(String codigoDestino, int nmrVoo) throws Exception
     {
-        if(nmrVoo == 0)
-            throw new Exception("Informações para voo faltantes!");
-
-        this.codigoDestino = codigoDestino;
-        this.nmrVoo = nmrVoo;
+        this.setCodigoDestino(codigoDestino);
+        this.setNmrVoo(nmrVoo);
     }
 
-    public void setIndiceDestino(String codigoDestino) throws Exception
+    public void setCodigoDestino(String codigoDestino) throws Exception
     {
+        if(codigoDestino == null || codigoDestino.length() != 3)
+            throw new Exception("Código do destino inválido");
         this.codigoDestino = codigoDestino;
     }
 
     public void setNmrVoo(int nmrVoo) throws Exception
     {
-        if(nmrVoo == 0)
+        if(nmrVoo <= 0)
             throw new Exception("Número do voo incorreto!");
         this.nmrVoo = nmrVoo;
     }

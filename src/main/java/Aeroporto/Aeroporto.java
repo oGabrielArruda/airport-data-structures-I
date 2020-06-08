@@ -29,7 +29,7 @@ public class Aeroporto
 
     public void setCodigo(String codigo) throws Exception
     {
-        if(codigo == null)
+        if(codigo == null || codigo.length() != 3)
             throw new Exception("Código de aeroporto inválido");
         this.codigo = codigo;
     }
@@ -44,6 +44,18 @@ public class Aeroporto
         return new String(this.cidade);
     }
 
+    public ListaVoosSemRepeticao getPossiveisVoos()
+    {
+        ListaVoosSemRepeticao list = null;
+        try
+        {
+             list = new ListaVoosSemRepeticao(this.possiveisVoos);
+        }
+        catch (Exception ex){ }
+        return list;
+
+    }
+
     public void addVoo(Voo voo) throws Exception
     {
         if(voo == null)
@@ -56,7 +68,7 @@ public class Aeroporto
     {
         String ret = "Código aeroporto: " + this.codigo;
         ret += "\n Cidade: " + cidade;
-        ret += "\n Voos: " + this.possiveisVoos;
+        ret += "\n Voos: " + this.possiveisVoos + "\n";
 
         return ret;
     }
