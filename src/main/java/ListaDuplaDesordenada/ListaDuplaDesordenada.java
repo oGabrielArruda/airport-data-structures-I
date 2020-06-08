@@ -139,6 +139,7 @@ public class ListaDuplaDesordenada<X>
         {
             this.primeiro = null;
             this.ultimo = null;
+            return;
         }
         this.primeiro = this.primeiro.getProx();
         this.primeiro.setAnte(null);

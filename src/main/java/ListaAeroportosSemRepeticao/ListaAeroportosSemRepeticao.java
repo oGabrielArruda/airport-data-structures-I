@@ -81,6 +81,23 @@ public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenadaSemRepetic
         atual.getInfo().removerVoo(nmrVoo);
     }
 
+    public ListaDuplaDesordenadaSemRepeticao<Voo> getListaDeVoos(String codigoAeroporto) throws Exception
+    {
+        No atual = super.primeiro;
+
+        while(atual != null)
+        {
+            if(atual.getInfo().getCodigo().equals(codigoAeroporto))
+                break;
+            atual = atual.getProx();
+        }
+        if(atual == null)
+            throw new Exception("Código de aeroporto inexistente");
+
+        return atual.getInfo().getPossiveisVoos();
+
+    }
+
     protected No buscaAeroporto(String codigo) throws Exception
     {
         No atual = super.primeiro;

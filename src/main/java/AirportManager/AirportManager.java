@@ -3,6 +3,7 @@ package AirportManager;
 import Aeroporto.Aeroporto;
 import Janelas.InitialWindow;
 import ListaAeroportosSemRepeticao.ListaAeroportosSemRepeticao;
+import ListaDuplaDesordenadaSemRepeticao.ListaDuplaDesordenadaSemRepeticao;
 import Voo.Voo;
 
 public class AirportManager
@@ -30,5 +31,10 @@ public class AirportManager
     {
         listaAeroportos.removerVoo(nmrVoo);
         System.out.println(listaAeroportos);
+    }
+
+    public ListaDuplaDesordenadaSemRepeticao<Voo> getListaDeVoos(String codigoAeroporto) throws Exception
+    {
+        return listaAeroportos.getListaDeVoos(codigoAeroporto);
     }
 }
