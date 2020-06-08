@@ -25,4 +25,10 @@ public class AirportManager
         listaAeroportos.insiraVoo(codigoOrigem, voo);
         System.out.println(listaAeroportos);
     }
+
+    public void removerVoo(int nmrVoo) throws Exception
+    {
+        listaAeroportos.removerVoo(nmrVoo);
+        System.out.println(listaAeroportos);
+    }
 }

@@ -24,10 +24,10 @@ public class CadastrarVoo {
             public void actionPerformed(ActionEvent e) {
                 try
                 {
-                    String codigoDest = txtCodigoDestino.getText().toUpperCase();
-                    String codOrigem = txtCodigoOrigem.getText().toUpperCase();
+                    String codigoDest = txtCodigoDestino.getText().toUpperCase().trim();
+                    String codOrigem = txtCodigoOrigem.getText().toUpperCase().trim();
 
-                    Voo voo = new Voo(codigoDest, Integer.parseInt(txtNmr.getText()));
+                    Voo voo = new Voo(codigoDest, Integer.parseInt(txtNmr.getText().trim()));
                     cadastrarVoo(codOrigem, voo);
 
                     limparCampos();

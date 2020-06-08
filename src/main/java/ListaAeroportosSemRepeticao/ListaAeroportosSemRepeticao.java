@@ -6,6 +6,8 @@ import ListaDuplaDesordenadaSemRepeticao.ListaDuplaDesordenadaSemRepeticao;
 import ListaVoosSemRepeticao.ListaVoosSemRepeticao;
 import Voo.Voo;
 
+import java.util.List;
+
 public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenadaSemRepeticao<Aeroporto>
 {
     public ListaAeroportosSemRepeticao()
@@ -49,10 +51,34 @@ public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenadaSemRepetic
         if(!this.existe(new Aeroporto(voo.getCodigoDestinoDestino(), "bar")))
             throw new Exception("Aeroporto de destino inexistente");
         if(this.existeVoo(voo))
-            throw new Exception("Voo já existente!");
+            throw new Exception("Voo já existente");
 
         No aeroportoOrigem = this.buscaAeroporto(codigoOrigem);
         aeroportoOrigem.getInfo().addVoo(voo);
+    }
+
+    /**
+     * Remove o voo determinado pelo número
+     * Primeiro procura-se o aeroporto que tem tal voo
+     * Caso não seja achado, lança-se exceção
+     * Se achado, chama-se o método remover voo da classe aeroporto
+     * @param nmrVoo nmr do voo
+     * @throws Exception se o voo não existir em nenhum aeroporto
+     */
+    public void removerVoo(int nmrVoo) throws Exception
+    {
+        No atual = super.primeiro;
+        while (atual != null)
+        {
+            ListaDuplaDesordenadaSemRepeticao<Voo> listaVoo = atual.getInfo().getPossiveisVoos();
+            if(listaVoo.existe(new Voo("foo", nmrVoo)))
+                break;
+            atual = atual.getProx();
+        }
+        if(atual == null)
+            throw new Exception("Voo inexistente");
+
+        atual.getInfo().removerVoo(nmrVoo);
     }
 
     protected No buscaAeroporto(String codigo) throws Exception
@@ -74,11 +100,11 @@ public class ListaAeroportosSemRepeticao extends ListaDuplaDesordenadaSemRepetic
         No atual = super.primeiro;
         while(atual != null)
         {
-            ListaVoosSemRepeticao voos = atual.getInfo().getPossiveisVoos();
-            if(voos.existeByNmrVoo(voo.getNmrVoo()))
+            if(atual.getInfo().getPossiveisVoos().existe(voo))
                 return true;
             atual = atual.getProx();
         }
         return false;
     }
+
 }

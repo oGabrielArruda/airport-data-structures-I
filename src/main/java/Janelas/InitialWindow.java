@@ -58,6 +58,18 @@ public class InitialWindow extends AirportManager {
                 addVoo.setVisible(true);
             }
         });
+
+        removerVooButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame removerVoo = new JFrame("RemoverVoo");
+                removerVoo.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                removerVoo.setContentPane(new RemoverVoo(manager).panelRemove);
+                removerVoo.pack();
+                removerVoo.setSize(600, 400);
+                removerVoo.setVisible(true);
+            }
+        });
     }
 
 }

@@ -24,8 +24,8 @@ public class AdicionarAeroporto {
             public void actionPerformed(ActionEvent e) {
                 try
                 {
-                    String codigo = txtCodigo.getText().toUpperCase();
-                    Aeroporto aero = new Aeroporto(codigo, txtCidade.getText());
+                    String codigo = txtCodigo.getText().toUpperCase().trim();
+                    Aeroporto aero = new Aeroporto(codigo, txtCidade.getText().trim());
                     adicionarAeroporto(aero);
                     txtCodigo.setText("");
                     txtCidade.setText("");

@@ -4,15 +4,16 @@
     <list default="true" id="dd442eb4-b89f-4f07-8fa8-967026be6fa3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Aeroporto/Aeroporto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Aeroporto/Aeroporto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Janelas/AdicionarAeroporto.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Janelas/AdicionarAeroporto.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AirportManager/AirportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AirportManager/AirportManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Janelas/AdicionarAeroporto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Janelas/AdicionarAeroporto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Janelas/CadastrarVoo.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Janelas/CadastrarVoo.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Janelas/CadastrarVoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Janelas/CadastrarVoo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Janelas/InitialWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Janelas/InitialWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ListaAeroportosSemRepeticao/ListaAeroportosSemRepeticao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaAeroportosSemRepeticao/ListaAeroportosSemRepeticao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ListaDuplaDesordenada/ListaDuplaDesordenada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaDuplaDesordenada/ListaDuplaDesordenada.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ListaVoosSemRepeticao/ListaVoosSemRepeticao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ListaVoosSemRepeticao/ListaVoosSemRepeticao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Voo/Voo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Voo/Voo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Aeroporto/Aeroporto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Aeroporto/Aeroporto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AirportManager/AirportManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AirportManager/AirportManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ListaAeroportosSemRepeticao/ListaAeroportosSemRepeticao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ListaAeroportosSemRepeticao/ListaAeroportosSemRepeticao.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +47,7 @@
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main.Main" />
       <module name="airport-data-structures-I" />
       <extension name="coverage">
@@ -59,11 +60,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -83,10 +79,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="88" key="#Project_Structure/0.0.1440.860@0.0.1440.860" timestamp="1591191087581" />
-    <state x="525" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1591541599907">
+    <state x="525" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1591630602457">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="525" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1591541599907" />
+    <state x="525" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1591630602457" />
     <state x="443" y="119" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1591191096757">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -99,38 +95,38 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="450" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.860@0.0.1440.860" timestamp="1591277256555" />
-    <state width="1397" height="225" key="GridCell.Tab.0.bottom" timestamp="1591620605693">
+    <state width="1397" height="276" key="GridCell.Tab.0.bottom" timestamp="1591633448826">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="225" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1591620605693" />
-    <state width="1397" height="225" key="GridCell.Tab.0.center" timestamp="1591620605693">
+    <state width="1397" height="276" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1591633448826" />
+    <state width="1397" height="276" key="GridCell.Tab.0.center" timestamp="1591633448826">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="225" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1591620605693" />
-    <state width="1397" height="225" key="GridCell.Tab.0.left" timestamp="1591620605693">
+    <state width="1397" height="276" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1591633448826" />
+    <state width="1397" height="276" key="GridCell.Tab.0.left" timestamp="1591633448825">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="225" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1591620605693" />
-    <state width="1397" height="225" key="GridCell.Tab.0.right" timestamp="1591620605693">
+    <state width="1397" height="276" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1591633448825" />
+    <state width="1397" height="276" key="GridCell.Tab.0.right" timestamp="1591633448826">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="225" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1591620605693" />
-    <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1591208029310">
+    <state width="1397" height="276" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1591633448826" />
+    <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1591633448827">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1591208029310" />
-    <state width="1397" height="276" key="GridCell.Tab.1.center" timestamp="1591208029310">
+    <state width="1397" height="276" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1591633448827" />
+    <state width="1397" height="276" key="GridCell.Tab.1.center" timestamp="1591633448826">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1591208029310" />
-    <state width="1397" height="276" key="GridCell.Tab.1.left" timestamp="1591208029310">
+    <state width="1397" height="276" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1591633448826" />
+    <state width="1397" height="276" key="GridCell.Tab.1.left" timestamp="1591633448826">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1591208029310" />
-    <state width="1397" height="276" key="GridCell.Tab.1.right" timestamp="1591208029310">
+    <state width="1397" height="276" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1591633448826" />
+    <state width="1397" height="276" key="GridCell.Tab.1.right" timestamp="1591633448826">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1591208029310" />
+    <state width="1397" height="276" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1591633448826" />
     <state x="221" y="72" key="SettingsEditor" timestamp="1591193861899">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

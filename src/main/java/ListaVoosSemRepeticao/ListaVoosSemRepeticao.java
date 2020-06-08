@@ -37,6 +37,7 @@ public class ListaVoosSemRepeticao extends ListaDuplaDesordenadaSemRepeticao<Voo
         return false;
     }
 
+
     public ListaVoosSemRepeticao(ListaVoosSemRepeticao modelo) throws Exception {
         super(modelo);
     }

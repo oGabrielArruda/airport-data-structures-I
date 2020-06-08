@@ -144,36 +144,65 @@ public class ListaDuplaDesordenada<X>
         this.primeiro.setAnte(null);
     }
 
-    public void remova(X x) throws Exception
+    public void remova(X i) throws Exception
     {
-        if(x == null)
-            throw new Exception("Elemento para a remoção nulo!");
+        if (i==null)
+            throw new Exception ("Informacao ausente");
 
-        if(this.primeiro == null)
-            throw new Exception("Lista vazia!");
+        if (this.primeiro==null/*&&this.ultimo==null*/)
+            throw new Exception ("Lista vazia");
 
-        if(this.primeiro.getInfo().equals(x))
+        if (i.equals(this.primeiro.getInfo()))
         {
-            if(this.primeiro == this.ultimo)
-            {
-                this.primeiro = null;
-                this.ultimo = null;
-                return;
-            }
             this.primeiro = this.primeiro.getProx();
-            this.primeiro.setAnte(null);
+
+            if (this.primeiro==null) //so tinha 1 elemento
+                this.ultimo = null;
+            else
+                this.primeiro.setAnte (null);
+
+            return;
         }
 
-        No atual = this.primeiro;
-        while(atual.getProx() != null)
+        No atual=this.primeiro;
+
+        for(;;) // FOR EVER (repete até Exception ou return)
         {
-            if(atual.getProx().getInfo().equals(x))
+            if (atual==null)
+                throw new Exception ("Informacao inexistente");
+
+            if (i.equals(atual.getInfo()))
             {
-                atual.setProx(atual.getProx().getProx());
-                atual.getProx().setAnte(atual);
-                break;
+                if (atual==this.primeiro)
+                {
+                    this.primeiro = this.primeiro.getProx();
+
+                    if (this.primeiro==null) //so tinha 1 elemento
+                        this.ultimo = null;
+                    else
+                        this.primeiro.setAnte (null);
+
+                    return;
+                }
+
+                if (atual==this.ultimo)
+                {
+                    this.ultimo = this.ultimo.getAnte();
+
+                    if (this.ultimo==null)
+                        this.primeiro=null;
+                    else
+                        this.ultimo.setProx(null);
+
+                    return;
+                }
+
+                atual.getAnte().setProx(atual.getProx());
+                atual.getProx().setAnte(atual.getAnte());
+                return;
             }
-            atual = atual.getProx();
+
+            atual=atual.getProx();
         }
     }
 

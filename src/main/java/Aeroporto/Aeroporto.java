@@ -8,7 +8,7 @@ public class Aeroporto
 {
     private String codigo;
     private String cidade;
-    private ListaVoosSemRepeticao possiveisVoos;
+    private ListaDuplaDesordenadaSemRepeticao<Voo> possiveisVoos;
 
     public Aeroporto(String codigo, String cidade) throws Exception
     {
@@ -17,7 +17,7 @@ public class Aeroporto
 
         this.setCodigo(codigo);
         this.setCidade(cidade);
-        possiveisVoos = new ListaVoosSemRepeticao();
+        possiveisVoos = new ListaDuplaDesordenadaSemRepeticao<Voo>();
     }
 
     public void setCidade(String cidade) throws Exception
@@ -44,12 +44,12 @@ public class Aeroporto
         return new String(this.cidade);
     }
 
-    public ListaVoosSemRepeticao getPossiveisVoos()
+    public ListaDuplaDesordenadaSemRepeticao<Voo> getPossiveisVoos()
     {
-        ListaVoosSemRepeticao list = null;
+        ListaDuplaDesordenadaSemRepeticao<Voo> list = null;
         try
         {
-             list = new ListaVoosSemRepeticao(this.possiveisVoos);
+             list = new ListaDuplaDesordenadaSemRepeticao<Voo>(this.possiveisVoos);
         }
         catch (Exception ex){ }
         return list;
@@ -64,6 +64,18 @@ public class Aeroporto
         possiveisVoos.insiraNoFim(voo);
     }
 
+    public void removerVoo(int nmrVoo) throws Exception
+    {
+        if(nmrVoo <= 0)
+            throw new Exception("Voo inválido");
+
+        Voo vooToRemove = new Voo("foo", nmrVoo);
+
+        if(!this.possiveisVoos.existe(vooToRemove))
+            throw new Exception("Voo inexistente");
+
+        this.possiveisVoos.remova(vooToRemove);
+    }
     public String toString()
     {
         String ret = "Código aeroporto: " + this.codigo;

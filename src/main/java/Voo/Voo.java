@@ -55,8 +55,8 @@ public class Voo
 
         Voo outroVoo = (Voo) obj;
 
-        if(this.nmrVoo != outroVoo.nmrVoo)
-            return false;
+        if(this.nmrVoo == outroVoo.nmrVoo)
+            return true;
         if(!this.codigoDestino.equals(outroVoo.codigoDestino))
             return false;
         return true;
