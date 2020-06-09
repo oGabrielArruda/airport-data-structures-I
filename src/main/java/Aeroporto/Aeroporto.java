@@ -95,7 +95,7 @@ public class Aeroporto
             return false;
 
         Aeroporto outroAeroporto = (Aeroporto)obj;
-        if(!this.codigo.equals(outroAeroporto.codigo))
+        if(this.codigo.equals(outroAeroporto.codigo))
             return false;
         if(!this.cidade.equals(outroAeroporto.cidade))
             return false;
@@ -104,11 +104,6 @@ public class Aeroporto
 
         return true;
     }
-    /*public void removerVoo(int nmrVoo) throws Exception
-    {
-        if(nmrVoo == 0)
-            throw new Exception("Número de voo inválido!");
-        possiveisVoos.remova();
-    }*/
+
     // métodos obrigatórios
 }

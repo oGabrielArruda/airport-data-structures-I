@@ -82,6 +82,18 @@ public class InitialWindow extends AirportManager {
                 listarVoos.setVisible(true);
             }
         });
+
+        listarTodosOsVoosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame listarVoos = new JFrame("ListarVoos");
+                listarVoos.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+                listarVoos.setContentPane(new ListarTodosVoos(manager).panelListar);
+                listarVoos.pack();
+                listarVoos.setSize(600, 400);
+                listarVoos.setVisible(true);
+            }
+        });
     }
 
 }

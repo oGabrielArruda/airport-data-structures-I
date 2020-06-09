@@ -25,7 +25,7 @@ public class Voo
         this.nmrVoo = nmrVoo;
     }
 
-    public String getCodigoDestinoDestino()
+    public String getCodigoDestino()
     {
         return new String(this.codigoDestino);
     }
@@ -61,6 +61,5 @@ public class Voo
             return false;
         return true;
     }
-
     // métodos obrigatorios
 }

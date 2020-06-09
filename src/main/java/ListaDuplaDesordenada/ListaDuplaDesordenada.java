@@ -223,20 +223,6 @@ public class ListaDuplaDesordenada<X>
         return false;
     }
 
-    public int getQtd ()
-    {
-        No  atual=this.primeiro;
-        int ret  =0;
-
-        while (atual!=null)
-        {
-            ret++;
-            atual = atual.getProx();
-        }
-
-        return ret;
-    }
-
     public X getDoInicio () throws Exception
     {
         if (this.primeiro==null)

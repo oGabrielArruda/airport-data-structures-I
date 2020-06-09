@@ -16,7 +16,7 @@ public class ListaVoosSemRepeticao extends ListaDuplaDesordenadaSemRepeticao<Voo
         No atual = super.primeiro;
         while(atual != null)
         {
-            if(atual.getInfo().getCodigoDestinoDestino().equals(voo.getCodigoDestinoDestino()))
+            if(atual.getInfo().getCodigoDestino().equals(voo.getCodigoDestino()))
                 return true;
             if(atual.getInfo().getNmrVoo() == voo.getNmrVoo())
                 return true;
