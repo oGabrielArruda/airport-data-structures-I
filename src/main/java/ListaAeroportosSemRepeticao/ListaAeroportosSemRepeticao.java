@@ -3,7 +3,6 @@ package ListaAeroportosSemRepeticao;
 import Aeroporto.Aeroporto;
 import ListaDuplaDesordenada.ListaDuplaDesordenada;
 import ListaDuplaDesordenadaSemRepeticao.ListaDuplaDesordenadaSemRepeticao;
-import ListaVoosSemRepeticao.ListaVoosSemRepeticao;
 import Voo.Voo;
 
 import java.util.List;

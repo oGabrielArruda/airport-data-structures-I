@@ -1,10 +1,9 @@
 package Aeroporto;
 
 import ListaDuplaDesordenadaSemRepeticao.ListaDuplaDesordenadaSemRepeticao;
-import ListaVoosSemRepeticao.ListaVoosSemRepeticao;
 import Voo.Voo;
 
-public class Aeroporto
+public class Aeroporto implements Cloneable
 {
     private String codigo;
     private String cidade;
@@ -12,9 +11,6 @@ public class Aeroporto
 
     public Aeroporto(String codigo, String cidade) throws Exception
     {
-        if(codigo == null || cidade == null)
-            throw new Exception("Informações de aeroporto faltantes!");
-
         this.setCodigo(codigo);
         this.setCidade(cidade);
         possiveisVoos = new ListaDuplaDesordenadaSemRepeticao<Voo>();
@@ -51,7 +47,7 @@ public class Aeroporto
         {
              list = new ListaDuplaDesordenadaSemRepeticao<Voo>(this.possiveisVoos);
         }
-        catch (Exception ex){ }
+        catch (Exception ex){}
         return list;
 
     }
@@ -105,5 +101,36 @@ public class Aeroporto
         return true;
     }
 
-    // métodos obrigatórios
+    public int hashCode()
+    {
+        int ret = 345;
+        ret = ret*13 + this.codigo.hashCode();
+        ret = ret*13 + this.cidade.hashCode();
+        ret = ret*13 + possiveisVoos.hashCode();
+        if(ret < 0)
+            ret = -ret;
+        return ret;
+    }
+
+    public Aeroporto(Aeroporto modelo) throws Exception
+    {
+        if(modelo == null)
+            throw new Exception("Modelo nulo!");
+
+        this.codigo = modelo.codigo;
+        this.cidade = modelo.cidade;
+        this.possiveisVoos = modelo.possiveisVoos;
+    }
+
+    public Object clone()
+    {
+        Aeroporto ret = null;
+        try
+        {
+            ret = new Aeroporto(this);
+        }
+        catch (Exception ex)
+        {}
+        return ret;
+    }
 }

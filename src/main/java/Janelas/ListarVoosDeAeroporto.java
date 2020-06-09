@@ -27,7 +27,6 @@ public class ListarVoosDeAeroporto {
 
                     int qtdVoos = listaVoos.qtd();
                     Voo[] arrVoos = new Voo[qtdVoos];
-                    System.out.println(qtdVoos);
 
                     int i = 0;
                     while(qtdVoos > 0)

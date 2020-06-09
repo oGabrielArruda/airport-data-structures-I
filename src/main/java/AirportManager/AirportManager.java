@@ -19,19 +19,16 @@ public class AirportManager
     public void addAeroporto(Aeroporto aeroporto) throws Exception
     {
         listaAeroportos.insiraNoFim(aeroporto);
-        System.out.println(listaAeroportos);
     }
 
     public void addVoo(String codigoOrigem, Voo voo) throws Exception
     {
         listaAeroportos.insiraVoo(codigoOrigem, voo);
-        System.out.println(listaAeroportos);
     }
 
     public void removerVoo(int nmrVoo) throws Exception
     {
         listaAeroportos.removerVoo(nmrVoo);
-        System.out.println(listaAeroportos);
     }
 
     public ListaDuplaDesordenadaSemRepeticao<Voo> getListaDeVoos(String codigoAeroporto) throws Exception
